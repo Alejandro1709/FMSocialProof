@@ -1,0 +1,197 @@
+:root {
+  /* Primary */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+
+  /* Neutral */
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Spartan', sans-serif;
+  background: url('../images/bg-pattern-top-desktop.svg'),
+    url('../images/bg-pattern-bottom-desktop.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 40%, cover;
+  background-position: bottom 40%, top left;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 111rem;
+}
+
+.container .container__top {
+  display: flex;
+  flex: 0 0 40%;
+}
+
+.container .container__top .left {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 0 0 50%;
+}
+
+.container .container__top .left .heading {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 4rem;
+  color: var(--very-dark-magenta);
+}
+
+.container .container__top .left .paragraph {
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+  margin-bottom: 4rem;
+  color: var(--dark-grayish-magenta);
+  font-weight: 500;
+}
+
+.container .container__bottom {
+  display: flex;
+  flex: 0 0 60%;
+}
+
+/* CARDS HOLDER */
+.container .container__bottom .cards {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* CARD */
+.container .container__bottom .cards .card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.9rem;
+  background-color: var(--very-dark-magenta);
+  color: white;
+  margin-right: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.container .container__bottom .cards .card:last-child {
+  margin-right: 0;
+}
+
+.container .container__bottom .cards .card.c2 {
+  margin-top: 2rem;
+}
+
+.container .container__bottom .cards .card.c3 {
+  margin-top: 4rem;
+}
+
+.container .container__bottom .cards .card .card--top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.container .container__bottom .cards .card .card--top .user-info p {
+  margin-top: 0.5rem;
+  color: var(--soft-pink);
+  font-weight: 700;
+}
+
+.container .container__bottom .cards .card .card--top img {
+  height: 4rem;
+  width: 4rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.container .container__bottom .cards .card .card--bottom {
+  font-size: 1.3rem;
+  line-height: 2;
+}
+
+.container .container__top .right {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+}
+
+.container .container__top .right .review {
+  padding: 2rem;
+  background-color: var(--light-grayish-magenta);
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.container .container__top .right .review.r2 {
+  margin-left: 2rem;
+}
+
+.container .container__top .right .review.r3 {
+  margin-left: 4rem;
+}
+
+@media screen and (max-width: 37.5em) {
+  body {
+    background: url('../images/bg-pattern-top-mobile.svg'),
+      url('../images/bg-pattern-bottom-mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 40%, cover;
+    background-position: bottom 40%, top left;
+  }
+  .container .container__top {
+    flex-direction: column;
+    text-align: center;
+  }
+  .container .container__bottom .cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container .container__bottom .cards .card {
+    margin-left: 2rem;
+  }
+
+  .container .container__bottom .cards .card:last-child {
+    margin-right: 2rem;
+  }
+
+  .container .container__bottom .cards .card.c3 {
+    margin-top: 2rem;
+  }
+
+  .container .container__top .right .review {
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .container .container__top .right .review.r2 {
+    margin-left: 2rem;
+  }
+
+  .container .container__top .right .review.r3 {
+    margin-left: 2rem;
+  }
+}
